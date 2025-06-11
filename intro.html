@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="star-shaped.html">4.2. Example 2: Star-shaped scalings in 2d</a></li>
 <li class="toctree-l2"><a class="reference internal" href="curvilinear.html">4.3. Example 3: Curvilinear scalings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fq_dep.html">4.4. Example 4: frequency dependent scaling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="star_shaped_fem.html">4.5. Example 5: Star-shaped scalings in 2d using radial FEM</a></li>
 </ul>
 </li>
 </ul>
@@ -409,8 +410,8 @@ document.write(`
 <p>In this notebook we explain the <a class="reference external" href="https://ngsolve.org">Netgen/NgSolve</a>-implementation of the methods presented in the PhD-Thesis</p>
 <p>M. Wess, <em>Frequency-Dependent Complex-Scaled Infinite Elements for Exterior Helmholtz Resonance Problems</em>, TU Wien, 2020, <a class="reference external" href="https://repositum.tuwien.at/handle/20.500.12708/15095">reposiTUm</a> <a class="reference external" href="https://repositum.tuwien.at/bitstream/20.500.12708/15095/2/Wess%20Markus%20-%202020%20-%20Frequency-dependent%20complex-scaled%20infinite%20elements%20for...pdf">pdf</a> <a class="reference external" href="https://doi.org/10.34726/hss.2020.78903">doi</a></p>
 <p>which is concerned with numerical methods for the Helmholtz resonance problem to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9e3f80f-861d-4e01-a8e0-8964ff8c370c">
-<span class="eqno">(1)<a class="headerlink" href="#equation-d9e3f80f-861d-4e01-a8e0-8964ff8c370c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6352a80a-aa33-4222-af45-865a57093187">
+<span class="eqno">(1)<a class="headerlink" href="#equation-6352a80a-aa33-4222-af45-865a57093187" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{find }(\omega,p),\text{ such that}\\
 -\Delta p(x) -\omega^2 p(x) &amp;= 0,&amp; x&amp;\in\Omega,\\
 p&amp;\text{ fulfills some b.c},&amp;x&amp;\in\partial\Omega,\\
