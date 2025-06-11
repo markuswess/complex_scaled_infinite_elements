@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+options: 
+  numbered: 2
+  maxdepth: 2
+chapters: 
+  #  - file: installation
+  - file: examples
+    sections: 
+      - file: examples/filters
+      - file: examples/filtered_power_iteration
+      - file: examples/dumbbell_td_evp
+
