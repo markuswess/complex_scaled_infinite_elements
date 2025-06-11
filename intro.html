@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=ca93fcec" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -63,6 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Infinite elements" href="infinite_elements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,7 +174,19 @@
                 </a>
             </li>
         </ul>
-        
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="infinite_elements.html">1. Infinite elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tp_disc.html">2. Tensor product discretization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fq_scaling.html">3. Frequency dependent scaling functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="examples.html">4. Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="circular.html">4.1. Example 1: Circular scalings in 2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="star-shaped.html">4.2. Example 2: Star-shaped scalings in 2d</a></li>
+<li class="toctree-l2"><a class="reference internal" href="curvilinear.html">4.3. Example 3: Curvilinear scalings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fq_dep.html">4.4. Example 4: frequency dependent scaling</a></li>
+</ul>
+</li>
+</ul>
+
     </div>
 </nav></div>
     </div>
@@ -390,8 +403,8 @@ document.write(`
 <p>In this notebook we explain the <a class="reference external" href="https://ngsolve.org">Netgen/NgSolve</a>-implementation of the methods presented in the PhD-Thesis</p>
 <p>M. Wess, <em>Frequency-Dependent Complex-Scaled Infinite Elements for Exterior Helmholtz Resonance Problems</em>, TU Wien, 2020, <a class="reference external" href="https://repositum.tuwien.at/handle/20.500.12708/15095">reposiTUm</a> <a class="reference external" href="https://repositum.tuwien.at/bitstream/20.500.12708/15095/2/Wess%20Markus%20-%202020%20-%20Frequency-dependent%20complex-scaled%20infinite%20elements%20for...pdf">pdf</a> <a class="reference external" href="https://doi.org/10.34726/hss.2020.78903">doi</a></p>
 <p>which is concerned with numerical methods for the Helmholtz resonance problem to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f9a1e818-ea00-4e2d-bd79-53d8dddbbfa2">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f9a1e818-ea00-4e2d-bd79-53d8dddbbfa2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d59b1cfc-c21f-44e1-a0ab-0e3ec60ac0e4">
+<span class="eqno">(1)<a class="headerlink" href="#equation-d59b1cfc-c21f-44e1-a0ab-0e3ec60ac0e4" title="Permalink to this equation">#</a></span>\[\begin{align}
 \text{find }(\omega,p),\text{ such that}\\
 -\Delta p(x) -\omega^2 p(x) &amp;= 0,&amp; x&amp;\in\Omega,\\
 p&amp;\text{ fulfills some b.c},&amp;x&amp;\in\partial\Omega,\\
@@ -418,16 +431,16 @@ Due to the use of these functions, we avoid the artificial truncation of the ext
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
 <p>In particular, we explain how the three main ideas of the thesis, namely</p>
 <ul class="simple">
-<li><p><span class="xref myst">infinite elements</span></p></li>
-<li><p><span class="xref myst">tensor-product exterior discretizations by the use of exterior coordinates</span></p></li>
-<li><p><span class="xref myst">frequency-dependent scaling functions and non-linear eigenvalue problems</span></p></li>
+<li><p><a class="reference internal" href="infinite_elements.html"><span class="std std-doc">infinite elements</span></a></p></li>
+<li><p><a class="reference internal" href="tp_disc.html"><span class="std std-doc">tensor-product exterior discretizations by the use of exterior coordinates</span></a></p></li>
+<li><p><a class="reference internal" href="fq_scaling.html"><span class="std std-doc">frequency-dependent scaling functions and non-linear eigenvalue problems</span></a></p></li>
 </ul>
 <p>can be implemented using the finite element library <a class="reference external" href="https://www.ngsolve.org">Netgen/NgSolve</a> and provide the following examples:</p>
 <ul class="simple">
-<li><p><span class="xref myst">1. circular scalings</span></p></li>
-<li><p><span class="xref myst">2. star-shaped scalings</span></p></li>
-<li><p><span class="xref myst">3. curvilinear scalings</span></p></li>
-<li><p><span class="xref myst">4. different frequency-dependencies</span></p></li>
+<li><p><a class="reference internal" href="circular.html"><span class="std std-doc">1. circular scalings</span></a></p></li>
+<li><p><a class="reference internal" href="star-shaped.html"><span class="std std-doc">2. star-shaped scalings</span></a></p></li>
+<li><p><a class="reference internal" href="curvilinear.html"><span class="std std-doc">3. curvilinear scalings</span></a></p></li>
+<li><p><a class="reference internal" href="fq_dep.html"><span class="std std-doc">4. different frequency-dependencies</span></a></p></li>
 </ul>
 <p>All of the examples approximate resonances of the complement of a circle which are given by the zeros of the derivatives of Hankel functions of the first kind, and can therefore be computed semi-analytically.</p>
 </section>
@@ -472,6 +485,15 @@ Due to the use of these functions, we avoid the artificial truncation of the ext
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="right-next"
+       href="infinite_elements.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Infinite elements</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               

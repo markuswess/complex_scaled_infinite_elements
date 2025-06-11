@@ -1,0 +1,59 @@
+Traceback (most recent call last):
+  File "/home/mwess/.local/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/mwess/.local/lib/python3.10/site-packages/nbclient/client.py", line 1263, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/mwess/.local/lib/python3.10/site-packages/nbclient/util.py", line 85, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/mwess/.local/lib/python3.10/site-packages/nbclient/util.py", line 60, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/mwess/.local/lib/python3.10/site-packages/nbclient/client.py", line 701, in async_execute
+    await self.async_execute_cell(
+  File "/home/mwess/.local/lib/python3.10/site-packages/nbclient/client.py", line 1019, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/mwess/.local/lib/python3.10/site-packages/nbclient/client.py", line 913, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from ngsolve import *
+from netgen.geom2d import *
+from nonlin_arnoldis import *
+from ngsolve.webgui import Draw
+from numpy import array,sqrt,loadtxt
+from matplotlib.pyplot import plot,show,xlim,ylim,legend
+
+
+N = 10        #infinite elements
+maxh = 0.1     #mesh-size
+order = 3      #fem order
+shift = 4-0.5j      #shift for Arnoldi algorithm
+center = (0.2,0)    #center of inner circle
+R = 0.5            #radius of inner circle
+
+#create geometry
+geo = SplineGeometry()
+geo.AddCircle((0,0),1,leftdomain=1,rightdomain=0,bc='Gamma')
+geo.AddCircle(center,R,leftdomain=0,rightdomain=1,bc='inner')
+
+
+#create mesh
+mesh = Mesh(geo.GenerateMesh(maxh=maxh))
+mesh.Curve(2*order)
+Draw(mesh)
+Gamma = mesh.Boundaries('Gamma')
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [1][0m, in [0;36m<cell line: 3>[0;34m()[0m
+[1;32m      1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mngsolve[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      2[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnetgen[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgeom2d[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[0;32m----> 3[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnonlin_arnoldis[39;00m [38;5;28;01mimport[39;00m [38;5;241m*[39m
+[1;32m      4[0m [38;5;28;01mfrom[39;00m [38;5;21;01mngsolve[39;00m[38;5;21;01m.[39;00m[38;5;21;01mwebgui[39;00m [38;5;28;01mimport[39;00m Draw
+[1;32m      5[0m [38;5;28;01mfrom[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mimport[39;00m array,sqrt,loadtxt
+
+[0;31mModuleNotFoundError[0m: No module named 'nonlin_arnoldis'
+ModuleNotFoundError: No module named 'nonlin_arnoldis'
+
