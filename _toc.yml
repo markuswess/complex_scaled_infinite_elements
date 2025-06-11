@@ -7,10 +7,13 @@ options:
   numbered: 2
   maxdepth: 2
 chapters: 
-  #  - file: installation
+  - file: infinite_elements 
+  - file: tp_disc
+  - file: fq_scaling
   - file: examples
     sections: 
-      - file: examples/filters
-      - file: examples/filtered_power_iteration
-      - file: examples/dumbbell_td_evp
-
+      - file: circular
+      - file: star-shaped
+      - file: curvilinear
+      - file: fq_dep
+      - file: star_shaped_fem
