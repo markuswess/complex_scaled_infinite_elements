@@ -398,8 +398,7 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><span class="xref myst">&lt;- back to main page</span></p>
-<section class="tex2jax_ignore mathjax_ignore" id="tensor-product-discretization">
+  <section class="tex2jax_ignore mathjax_ignore" id="tensor-product-discretization">
 <h1><span class="section-number">2. </span>Tensor product discretization<a class="headerlink" href="#tensor-product-discretization" title="Link to this heading">#</a></h1>
 <p>As explained in <a class="reference download internal" download="" href="_downloads/4fab0784d6edff7da52c4157eb7ca5f9/dissertation_wess.pdf"><span class="xref download myst">Section 6.2</span></a>, for the exterior discretization we need to define basis functions</p>
 <div class="amsmath math notranslate nohighlight">
@@ -413,8 +412,8 @@ For the radial basis functions \)</span>\phi_j<span class="math notranslate nohi
 <p>To realize the tensorization, we use <span class="math notranslate nohighlight">\(N+1\)</span> copies of the according surface space <span class="math notranslate nohighlight">\(\hat X\)</span>, i.e. we use the space
 $<span class="math notranslate nohighlight">\(\hat X^N=\left(\hat X,\ldots,\hat X\right)\)</span>$
 and write a discrete function as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5d9b426-2afd-4f2c-864f-9699464886ff">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-f5d9b426-2afd-4f2c-864f-9699464886ff" title="Permalink to this equation">#</a></span>\[\begin{align}\sum_{j=0}^N c_j\phi_j(\xi) \hat u^j(\hat x),\tag{1}\end{align}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c24a6980-8d33-46af-941f-77c49fc6f4e6">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-c24a6980-8d33-46af-941f-77c49fc6f4e6" title="Permalink to this equation">#</a></span>\[\begin{align}\sum_{j=0}^N c_j\phi_j(\xi) \hat u^j(\hat x),\tag{1}\end{align}\]</div>
 <p>for discrete tangential functions <span class="math notranslate nohighlight">\(\hat u^j\in \hat X\)</span>.
 Note that, since only the first radial basis function <span class="math notranslate nohighlight">\(\phi_0\)</span> has a non-vanishing trace at <span class="math notranslate nohighlight">\(0\)</span> we identify the first exterior basis functions with the according interior basis functions.</p>
 <div class="cell docutils container">
@@ -441,7 +440,7 @@ Note that, since only the first radial basis function <span class="math notransl
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int dofs:  501
 surf dofs:  146
-components:  [&lt;ngsolve.comp.H1 object at 0x71b32d317ce0&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;, &lt;ngsolve.comp.H1 object at 0x71b32d371c10&gt;]
+components:  [&lt;ngsolve.comp.H1 object at 0x77cc4c56abb0&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;, &lt;ngsolve.comp.H1 object at 0x77cc5d9a2d90&gt;]
 </pre></div>
 </div>
 </div>
@@ -2589,7 +2588,6 @@ Row 2106:   20: 0   21: 0   193: 0   521: 0   522: 0   646: 0   667: 0   668: 0 
 </div>
 </div>
 <p>The implementation of different bilinear-forms works accordingly.</p>
-<p><span class="xref myst">&lt;- back to main page</span></p>
 </section>
 </section>
 
