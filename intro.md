@@ -65,7 +65,6 @@ All of the examples approximate resonances of the complement of a circle which a
 
 *All of the examples require at least NGSolve-6.2.2008, a sufficiently recent version of [numpy](https://numpy.org) and [matplotlib](https://matplotlib.org) and, to run as a [jupyter-notebook](https://ngsolve.org/docu/latest/install/usejupyter.html), an installed [webgui](https://ngsolve.org/docu/latest/i-tutorials/index.html#installation).*
 
-**[download code as .zip-file](fq_dp_cs_ie.zip)**
 
 ***
 
